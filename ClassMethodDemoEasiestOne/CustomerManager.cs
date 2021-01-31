@@ -6,14 +6,24 @@ namespace ClassMethodDemoEasiestOne
 {
     class CustomerManager
     {
-        
-        public void AddCustomer(Customer customer)
-        {
-            Console.WriteLine("Basariyla eklendi : "+ customer.Name);
+        Customer createCustomer = new Customer();
 
+        public void AddCustomer(List<Customer> customers)
+        {
+            Console.WriteLine("Please write your ID Number: ");
+            createCustomer.Id = Console.ReadLine();
+            Console.WriteLine("Please write your name: ");
+            createCustomer.Name = Console.ReadLine();
+            Console.WriteLine("Please write your surname: ");
+            createCustomer.Surname = Console.ReadLine();
+            Console.WriteLine("Please write your credit card number: ");
+            createCustomer.CreditPoint = Console.ReadLine();
+            customers.Add(createCustomer);
+
+            
         }
 
-        public void ListCustomer(Customer[] customers)
+        public void ListCustomer(List<Customer> customers)
         {
             foreach (var customer in customers)
             {
@@ -21,7 +31,7 @@ namespace ClassMethodDemoEasiestOne
                 Console.WriteLine("Customer Id: "+ customer.Id);
                 Console.WriteLine("Customer Name: "+ customer.Name);
                 Console.WriteLine("Customer Surname: "+ customer.Surname);
-                Console.WriteLine("Customer Credit Point: "+ customer.CreditPoint);
+                Console.WriteLine("Customer Credit Card Number: "+ customer.CreditPoint);
                 Console.WriteLine("----------------");
             }
         }
